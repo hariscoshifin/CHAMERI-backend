@@ -9,6 +9,11 @@ const adminSchema = new mongoose.Schema(
     role: { type: String, enum: ["admin", "superadmin", "editor", "viewer"], default: "editor" },
     avatar: { type: String, default: "" },
     isActive: { type: Boolean, default: true },
+    // ── Forgot-password OTP ──────────────────────────────────────────────────
+    otpCode:            { type: String, default: null },
+    otpExpires:         { type: Date,   default: null },
+    resetToken:         { type: String, default: null },
+    resetTokenExpires:  { type: Date,   default: null },
   },
   { timestamps: true }
 );
